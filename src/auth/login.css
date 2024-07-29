@@ -1,0 +1,60 @@
+.page {
+    height: 90vh; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover {
+    background-color: white;
+    width: 30em;
+    height: 35em;
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.incedo {
+    background-image: url("../icons/incedo_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 100px;
+    box-shadow: 0 15px 8px rgba(214, 15, 15, 0.1);
+    border-radius: 25px;
+    margin-bottom: -1em; 
+}
+.inpt{
+    border: none;
+    background-color: rgb(229, 226, 226);
+    height: 4em;
+    width: 80%;
+    border-radius: 0.25em;
+    text-align: center;
+    padding: 2em;
+    text-transform: none;
+}
+
+.inpt:focus{
+    outline-color: rgb(242, 115, 69);
+}
+.login-btn{
+    width: 40%;
+    height: 3em;
+    background-color: rgb(245, 113, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+.login-btn:hover{
+    transform: scale(1.25);
+}
