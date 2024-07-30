@@ -55,6 +55,14 @@ function ManagerOnboarding() {
                 }
             }).then(resp => {
                 setMsg('Manager Onboarded Successfully..');
+                // Reset the form fields
+                setName('');
+                setEmail('');
+                setContact('');
+                setUsername('');
+                setPassword('');
+                setJobTitle('');
+                setErrors({});
             })
                 .catch(err => {
                     setMsg('Manager Onboarding Failed.. please contact IT Admin');
@@ -85,26 +93,26 @@ function ManagerOnboarding() {
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Enter Name:</label>
-                                    <input type="text" className="form-control" placeholder="Enter full name"
+                                    <input type="text" className="form-control" placeholder="Enter full name" value={name}
                                         onChange={(e) => setName(e.target.value)} />
                                     {errors.name && <div className="text-danger">{errors.name}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Enter Email:</label>
-                                    <input type="email" className="form-control" placeholder="Enter email@example.com"
+                                    <input type="email" className="form-control" placeholder="Enter email@example.com" value={email}
                                         onChange={(e) => setEmail(e.target.value)} />
                                     {errors.email && <div className="text-danger">{errors.email}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Enter Contact:</label>
-                                    <input type="tel" className="form-control" placeholder="999-999-9999"
+                                    <input type="tel" className="form-control" placeholder="999-999-9999" value={contact}
                                         onChange={(e) => setContact(e.target.value)} />
                                     {errors.contact && <div className="text-danger">{errors.contact}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Select Job Title:</label>
-                                    <select className="form-select" onChange={(e) => setJobTitle(e.target.value)}>
-                                        <option value="" disabled selected>Select a job title</option>
+                                    <select className="form-select" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)}>
+                                        <option value="" disabled>Select a job title</option>
                                         {jobTitleOptions.map((e, index) => (
                                             <option key={index} value={e}>{e}</option>
                                         ))}
@@ -116,13 +124,13 @@ function ManagerOnboarding() {
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Enter Username:</label>
-                                    <input type="text" className="form-control" placeholder="Enter username"
+                                    <input type="text" className="form-control" placeholder="Enter username" value={username}
                                         onChange={(e) => setUsername(e.target.value)} />
                                     {errors.username && <div className="text-danger">{errors.username}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Enter Password:</label>
-                                    <input type="password" className="form-control" placeholder="Enter password"
+                                    <input type="password" className="form-control" placeholder="Enter password" value={password}
                                         onChange={(e) => setPassword(e.target.value)} />
                                     {errors.password && <div className="text-danger">{errors.password}</div>}
                                 </div>
