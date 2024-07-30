@@ -27,7 +27,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    console.log('Current username state:', username); // Debugging line
+    console.log('Current username state:', username); 
   }, [username]);
 
   return (
@@ -39,7 +39,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="nav-right">
-        <span className="nav-username">Welcome {username || 'Guest'}</span>
+        <span className="nav-username">Welcome {username}</span>
         <button className="btn btn-secondary" onClick={logout}>LogOut</button>
       </div>
     </nav>

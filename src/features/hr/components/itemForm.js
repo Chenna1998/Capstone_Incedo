@@ -5,7 +5,7 @@ import { Button } from 'primereact/button';
 import { FloatLabel } from 'primereact/floatlabel';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import '../components/itemform.css'; // Import your custom CSS
+import '../components/itemform.css'; 
 import axios from 'axios';
 
 const ItemForm = () => {
@@ -46,11 +46,11 @@ const ItemForm = () => {
     };
 
     return (
-        <div className="form-container1">
-            <div className="form-card1">
+        <div className="form-container">
+            <div className="form-card">
                 <form onSubmit={handleSubmit}>
-                    <div className="form-row1 same-row">
-                        <div className="field1">
+                    <div className="form-row same-row">
+                        <div className="field">
                             <FloatLabel>
                                 <InputText
                                     id="itemname"
@@ -60,7 +60,7 @@ const ItemForm = () => {
                                 <label htmlFor="itemname">Item Name</label>
                             </FloatLabel>
                         </div>
-                        <div className="field1">
+                        <div className="field">
                             <FloatLabel>
                                 <InputText
                                     id="description"
@@ -70,7 +70,9 @@ const ItemForm = () => {
                                 <label htmlFor="description">Description</label>
                             </FloatLabel>
                         </div>
-                        <div className="field1">
+                    </div>
+                    <div className="form-row same-row">
+                        <div className="field">
                             <FloatLabel>
                                 <InputNumber
                                     id="quantity"
@@ -78,13 +80,13 @@ const ItemForm = () => {
                                     onValueChange={(e) => setQuantity(e.value)}
                                     mode="decimal"
                                     showButtons={true}
-                                    integerOnly={true} // Allow only integers
+                                    integerOnly={true}
                                     useGrouping={false}
                                 />
                                 <label htmlFor="quantity">Quantity</label>
                             </FloatLabel>
                         </div>
-                        <div className="field1">
+                        <div className="field">
                             <FloatLabel>
                                 <InputNumber
                                     id="points"
@@ -92,18 +94,18 @@ const ItemForm = () => {
                                     onValueChange={(e) => setPoints(e.value)}
                                     mode="decimal"
                                     showButtons={true}
-                                    integerOnly={true} // Allow only integers
+                                    integerOnly={true}
                                     useGrouping={false}
                                 />
                                 <label htmlFor="points">Points Required</label>
                             </FloatLabel>
                         </div>
                     </div>
-                    <Button type="submit" label="Submit" className="submit-button1" />
+                    <Button type="submit" label="Submit" className="submit-button" />
                 </form>
             </div>
 
-            <div className="table-container1">
+            <div className="table-container">
                 {items.length > 0 && (
                     <div className="card">
                         <DataTable value={items} tableStyle={{ minWidth: '50rem' }}>

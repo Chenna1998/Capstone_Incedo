@@ -4,14 +4,14 @@ import logoImage from '../../../icons/incedo_logo.png';
 import { useEffect, useState } from 'react';
 
 function Navbar() {
-
   const navigate = useNavigate();
   const [username, setUsername] = useState(localStorage.getItem('username'));
 
-  const logout = ()=>{
+  const logout = () => {
     localStorage.clear();
     navigate('/?msg=logged_out')
   }
+
   useEffect(() => {
     const handleStorageChange = () => {
       setUsername(localStorage.getItem('username'));
@@ -21,6 +21,7 @@ function Navbar() {
       window.removeEventListener('storage', handleStorageChange);
     };
   }, []);
+
   return (
     <nav className="nav">
       <div className="nav-left">

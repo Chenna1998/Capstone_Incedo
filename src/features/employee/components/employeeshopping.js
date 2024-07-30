@@ -222,8 +222,10 @@ function EmployeeShopping() {
         <div className="employee-shopping">
             <div className="card">
                 <h3 className="title">Employee Shopping</h3>
-                <div className="flex flex-column align-items-center justify-content-center">
+                <div className="card-header">
                     <h4>Reward Points: {rewardPoints}</h4>
+                </div>
+                <div className="flex flex-column align-items-center justify-content-center">
                     <DataTable value={filteredItems} header={header} tableStyle={{ minWidth: '60rem' }} className="custom-datatable">
                         <Column field="name" header="Name" sortable></Column>
                         <Column field="description" header="Description" sortable></Column>

@@ -5,14 +5,12 @@ import axios from 'axios';
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 function Login() {
-
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [errMsg, setErrMsg] = useState('');
     const [param] = useSearchParams();
     const navigate = useNavigate();
     const [msg] = useState(param.get('msg'));
-
 
     const onLogin = () => {
         let token = window.btoa(username + ":" + password)
@@ -36,13 +34,13 @@ function Login() {
                     navigate('/hr');
                     return;
                 }
-                else if(user.role==='MANAGER'){
+                else if (user.role === 'MANAGER') {
                     navigate('/manager');
-                 return;
-                 }if(user.role==='EMPLOYEE'){
+                    return;
+                } if (user.role === 'EMPLOYEE') {
                     navigate('/employee')
                     return;
-                 }
+                }
 
             })
             .catch(error => { setErrMsg('Invalid Credentials') })
@@ -52,11 +50,13 @@ function Login() {
     return (
         <div className="page">
             <div className="cover">
-                <div className="incedo"></div>
-                <h1>Login</h1>
+                <div className="incedo-container">
+                    <div className="incedo"></div>
+                    <h1 className="login-title">Login</h1>
+                </div>
                 <div>{errMsg}</div>
                 {
-                    msg === "" || msg === undefined || msg === null ? '' : <div class="alert alert-dark" role="alert">
+                    msg === "" || msg === undefined || msg === null ? '' : <div className="alert alert-dark" role="alert">
                         You have logged Out
                     </div>
                 }

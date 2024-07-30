@@ -3,21 +3,16 @@ import '../hr/hr.css';
 import HRStat from "./components/hrstat";
 import ItemForm from "./components/itemForm";
 
-
 function HR() {
     return (
-        <div>
-            <div>
+        <div className="hr-container">
             <Navbar />
-            </div>
-            <div>
+            <div className="hr-content">
                 <HRStat />
+                <ItemForm />
             </div>
-            <div>
-                <ItemForm/>
-            </div>
-
-            </div>
-    )
+        </div>
+    );
 }
+
 export default HR;

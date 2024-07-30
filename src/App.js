@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Employee from "./features/employee/employee";
 import Footer from "./components/footer";
+import './App.css';
+
 
 function App() {
   return (
